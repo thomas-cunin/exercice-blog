@@ -14,6 +14,11 @@ function findUser(string $post_id): array|bool
 
 	$query = $db->prepare("
 		SELECT id_post, title, content, creation_date FROM posts WHERE id_post = ?
+		SELECT p.id_post, u.username, p.content, p.creation_date, u.email, u.id_user
+		FROM posts AS p
+		INNER JOIN users AS u
+		ON p.id_user = u.id_user
+		WHERE p.id_post = ?
 	");
 
 	$query->execute([
@@ -23,4 +28,27 @@ function findUser(string $post_id): array|bool
 	$user = $query->fetch();
 
 	return $user;
+}
+
+function getComments(string $post_id): array|bool
+{
+	$db = getConnection();
+
+	$query = $db->prepare("
+		SELECT c.id_comment, u.username, c.creation_date, c.content, u.avatar, u.id_user
+		FROM comments AS c
+		INNER JOIN users AS u
+		ON c.id_user = u.id_user
+		WHERE c.id_post = ?
+		ORDER BY c.creation_date DESC
+	");
+
+
+	$query->execute([
+		$post_id
+	]);
+
+	$comments = $query->fetchAll();
+
+	return $comments;
 }

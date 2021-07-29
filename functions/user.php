@@ -1,14 +1,6 @@
 <?php
 
-/** Contient toutes les fonctions concernant les utilisateurs */
-
-/**
- * Récupère un utilisateur à partir de son pseudo
- *
- * @param string $username Le nom de l'utilisateur que l'on cherche dans la base de données
- * @return array|bool
- */
-function findUser(string $username): array|bool
+function findUser(string $username)
 {
 	$db = getConnection();
 
