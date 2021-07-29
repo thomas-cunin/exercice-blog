@@ -15,11 +15,8 @@ $ordersPerPage = 3;  // Nombre de ligne à afficher
 
 // je vérifie si la page excite dans l'url
 if (isset($_GET['page'])){
-
   $currentPage = (int) $_GET['page'];
 }
-
-
 else{ 
     // Si pas de numéro de page dans l'url alors c'est la page 1 par défaut
     $currentPage = 1;
