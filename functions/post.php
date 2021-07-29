@@ -8,7 +8,7 @@
  * @param string $username Le nom de l'utilisateur que l'on cherche dans la base de données
  * @return array|bool
  */
-function findUser(string $post_id): array|bool
+function findPost(string $id_post): array|bool
 {
 	$db = getConnection();
 
@@ -25,9 +25,9 @@ function findUser(string $post_id): array|bool
 		$id_post
 	]);
 
-	$user = $query->fetch();
+	$posts = $query->fetch();
 
-	return $user;
+	return $posts;
 }
 
 function getComments(string $post_id): array|bool
