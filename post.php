@@ -2,7 +2,7 @@
 session_start(); // Permet d'accéder aux données de session
 require './functions/package.php';
 
-if (isset($_GET['id']) && findPost($_GET['id']) !== false){
+if (isset($_GET['id']) AND findPost($_GET['id']) !== false){
   $post = findPost($_GET['id']);
   // Template -> post.phtml
   $template = 'post';
@@ -12,5 +12,7 @@ if (isset($_GET['id']) && findPost($_GET['id']) !== false){
   require './template.phtml';
 
 } else {
-  redirect('./index.php');
+  echo 'pb';
+  var_dump($_GET['id']);
+  var_dump(findPost($_GET['id']));
 }
