@@ -20,7 +20,7 @@ function findPost(string $post_id): array|bool
 		$id_post
 	]);
 
-	$user = $query->fetch();
+	$posts = $query->fetch();
 
-	return $user;
+	return $posts;
 }
