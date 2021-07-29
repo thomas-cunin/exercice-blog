@@ -1,4 +1,4 @@
-<section class="section container ">
+<section class="section container">
     <?php foreach ($posts as $post) : ?>
     <div class="card">
         <div class="card-content">
@@ -8,7 +8,8 @@
                 </div>
             </div>
             <div class="content">
-                <p><?= $post['content'] ?><a href="./post.php?id_post=<?= $post['id_post'] ?>">... lire la suite</a></p>
+                <p><?= $post['content'] ?><a href="./post.php?id_post=<?= $post['id_post'] ?>">... lire la suite</a>
+                </p>
             </div>
             <div class="content">
                 <h5>Auteur : <?= $post['username'] ?></h5>
@@ -22,28 +23,17 @@
 </section>
 <section class="container section">
     <div>
-        <nav class="pagination is-centered" role="navigation" aria-label="pagination">
-            <a class="pagination-previous">Previous</a>
-            <a class="pagination-next">Next page</a>
+        <nav class="pagination is-centered">
+            <a <?php if ($currentPage <= 1): ?> disabled<?php endif ?> class="pagination-previous" href="./index.php?page=<?= $currentPage - 1 ?>">Previous</a>
+            <a class="pagination-next" <?php if($currentPage >= $totalPages): ?> disabled <?php endif ?> href="./index.php?page=<?= $currentPage + 1 ?>">Next page</a>
             <ul class="pagination-list">
-                <li>
-                    <a class="pagination-link" aria-label="Goto page 1">1</a>
+                <?php for ($page = 1; $page <= $totalPages; $page++): ?>
+                <li class="">
+                    <a <?php if ($page === $currentPage): ?>
+                    active
+                    <?php endif ?> class="pagination-link" href="./index.php?page=<?= $page?>"><?= $page ?></a>
                 </li>
-                <li><span class="pagination-ellipsis">&hellip;</span></li>
-                <li>
-                    <a class="pagination-link" aria-label="Goto page 45">45</a>
-                </li>
-                <li>
-                    <a class="pagination-link is-current" aria-label="Page 46" aria-current="page">46</a
-                    >
-                </li>
-                <li>
-                    <a class="pagination-link" aria-label="Goto page 47">47</a>
-                </li>
-                <li><span class="pagination-ellipsis">&hellip;</span></li>
-                <li>
-                    <a class="pagination-link" aria-label="Goto page 86">86</a>
-                </li>
+                <?php endfor ?>
             </ul>
         </nav>
     </div>
