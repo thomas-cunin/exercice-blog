@@ -24,6 +24,6 @@ $posts = $query->fetchAll();
 
 $template = 'index';
 
-$title = 'Bienvenue sur mon blog';
+$title = 'Bienvenue sur mon blog'; // titre dans la balise title du head dans la template.phtml
 
 require './template.phtml';
