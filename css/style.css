@@ -1,3 +1,13 @@
 .pagination-link[disabled], .pagination-next[disabled], .pagination-previous[disabled] {
     display: none;
    }
+
+.avatar{
+    display: none;
+}
+
+footer{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
