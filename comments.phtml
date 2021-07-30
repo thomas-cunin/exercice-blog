@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php foreach ($comments as $comment) : ?>
     <div class="card my-4">
         <div class="card-content">
@@ -17,3 +18,24 @@
         </div>
     </div>
 <?php endforeach ?>
+=======
+<?php foreach ($comments as $comment) : ?>
+    <div class="card my-4">
+        <div class="card-content">
+            <div class="media">
+                <div class="media-left">
+                    <figure <?php if ($comment['avatar'] === NULL): ?> class="avatar"<?php endif ?>  class="image is-48x48">
+                    <img src="<?= $comment['avatar'] ?>" alt="Avatar de <?= $comment['username'] ?>">
+                    </figure>
+                </div>
+            </div>
+            <div class="content">
+                <p><?= $comment['content'] ?></p>
+                <br />                 
+                <p class="subtitle is-6">Auteur du commentaire : <br /><span class="has-text-primary"><?= $comment['username'] ?></span></p> 
+                <time>Date du commentaire : <br /><span class="has-text-primary"><?= $comment['date'] ?> à <?= $comment['heure'] ?></span></time>
+            </div>
+        </div>
+    </div>
+<?php endforeach ?>
+>>>>>>> 7955a96f82ec84472a25bda5e1f6bd60ce587812
