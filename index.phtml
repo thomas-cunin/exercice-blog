@@ -1,4 +1,4 @@
-<section class="section container ">
+<section class="section container">
     <?php foreach ($posts as $post) : ?>
     <div class="card block">
         <div class="card-content">
@@ -22,27 +22,21 @@
 </section>
 <section class="container section">
     <div>
-        <nav class="pagination is-centered" role="navigation" aria-label="pagination">
-            <a class="pagination-previous">Previous</a>
-            <a class="pagination-next">Next page</a>
+        <nav class="pagination is-centered">
             <ul class="pagination-list">
-                <li>
-                    <a class="pagination-link" aria-label="Goto page 1">1</a>
+                <li >
+                <a <?php if ($currentPage <= 1): ?> disabled<?php endif ?>  class="pagination-previous" href="./index.php?page=<?= $currentPage - 1 ?>">Previous</a>
                 </li>
-                <li><span class="pagination-ellipsis">&hellip;</span></li>
+
+                <?php for ($page = 1; $page <= $totalPages; $page++): ?>
+                <li class="">
+                    <a <?php if ($page === $currentPage): ?>
+                    active
+                    <?php endif ?> class="pagination-link" href="./index.php?page=<?= $page?>"><?= $page ?></a>
+                </li <?php if($currentPage >= $totalPages): ?> disabled <?php endif ?>>
+                <?php endfor ?>
                 <li>
-                    <a class="pagination-link" aria-label="Goto page 45">45</a>
-                </li>
-                <li>
-                    <a class="pagination-link is-current" aria-label="Page 46" aria-current="page">46</a
-                    >
-                </li>
-                <li>
-                    <a class="pagination-link" aria-label="Goto page 47">47</a>
-                </li>
-                <li><span class="pagination-ellipsis">&hellip;</span></li>
-                <li>
-                    <a class="pagination-link" aria-label="Goto page 86">86</a>
+                <a <?php if($currentPage >= $totalPages): ?> disabled <?php endif ?> class="pagination-next"  href="./index.php?page=<?= $currentPage + 1 ?>">Next page</a>
                 </li>
             </ul>
         </nav>

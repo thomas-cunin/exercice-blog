@@ -1,6 +1,5 @@
 <?php
-
-function findUser(string $username)
+function findUser(string $username): ?array
 {
 	$db = getConnection();
 
@@ -13,6 +12,10 @@ function findUser(string $username)
 	]);
 
 	$user = $query->fetch();
+
+    if ($user === false) {
+        return null;
+    }
 
 	return $user;
 }
