@@ -1,0 +1,28 @@
+<div class="section">
+  <div class="card">
+      <div class="card-content">
+          <div class="media">
+              <div class="media-left">
+                  <figure <?php if ($post['avatar'] === NULL): ?> class="avatar"<?php endif ?>  class="image is-48x48">
+                  <img src="<?= $post['avatar'] ?>" alt="Avatar de <?= $post['username'] ?>">
+                  </figure>
+              </div>
+              <div class="media-content">
+                  <p class="title is-4 has-text-danger"><?= $post['title'] ?></p>  
+              </div>
+          </div>
+
+          <div class="content">
+                <p><?= $post['content'] ?></p>
+                <p>Catégorie: <br /><span class="has-text-primary"><?= $post['name_categorie'] ?></span></p>
+                <br />                 
+                <p class="subtitle is-6">Auteur du post : <br /><span class="has-text-primary"><?= $post['username'] ?></span></p> 
+                 <time>Date de l'article : <br /><span class="has-text-primary"><?= $post['date'] ?> à <?= $post['heure'] ?></span></time>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="section">
+    <h2 class="is-size-3 mb-3">Commentaires</h2>
+<?php require './comments.php' ?>
+</div>
