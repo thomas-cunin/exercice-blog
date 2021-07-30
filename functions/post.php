@@ -8,7 +8,7 @@ function findPost($id_post)
 
 
 	$query = $db->prepare("
-		SELECT p.id_post, u.username, p.content, p.creation_date, u.email, u.id_user, p.title, cat.name_category
+		SELECT p.id_post, u.username, p.content, p.creation_date, u.email, u.id_user, p.title, cat.name_categorie, u.avatar
 		FROM posts AS p
 		INNER JOIN users AS u
 		ON p.id_user = u.id_user
