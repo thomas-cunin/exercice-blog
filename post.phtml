@@ -1,23 +1,23 @@
-<div class="column is-half">
+<div class="section">
   <div class="card">
       <div class="card-content">
           <div class="media">
               <div class="media-left">
-                  <figure class="image is-48x48">
-                  <img src="<?= $post['avatar'] ?>" alt="Avatar">
+                  <figure <?php if ($post['avatar'] === NULL): ?> class="avatar"<?php endif ?>  class="image is-48x48">
+                  <img src="<?= $post['avatar'] ?>" alt="Avatar de <?= $post['username'] ?>">
                   </figure>
               </div>
               <div class="media-content">
-                  <p class="title is-4"><?= $post['title'] ?></p>
-                  <p class="subtitle is-6"><?= $post['email'] ?></p>
+                  <p class="title is-4 has-text-danger"><?= $post['title'] ?></p>  
               </div>
           </div>
 
           <div class="content">
-              <p><?= $post['content'] ?></p>
-          <p>Catégorie: <?= $post['name_categorie'] ?></p>
-          <br>
-          <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                <p><?= $post['content'] ?></p>
+                <p>Catégorie: <br /><span class="has-text-primary"><?= $post['name_categorie'] ?></span></p>
+                <br />                 
+                <p class="subtitle is-6">Auteur du post : <br /><span class="has-text-primary"><?= $post['username'] ?></span></p> 
+                 <time>Date de l'article : <br /><span class="has-text-primary"><?= $post['date'] ?> à <?= $post['heure'] ?></span></time>
           </div>
       </div>
   </div>
