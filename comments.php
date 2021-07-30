@@ -1,6 +1,9 @@
 <?php
 
-$db = getConnection();
+
+$comments = findComments($_GET['id_post']);
+
+/* $db = getConnection();
 
 	$query = $db->prepare("
 		SELECT c.id_comment, u.username, DATE_FORMAT(c.creation_date, '%d %M %Y') AS date, DATE_FORMAT(c.creation_date, '%H h %i') AS heure, c.content, u.avatar, u.id_user
@@ -16,6 +19,6 @@ $db = getConnection();
 		$_GET['id_post']
 	]);
 
-	$comments = $query->fetchAll();
+	$comments = $query->fetchAll(); */
 
   require 'comments.phtml';

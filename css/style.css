@@ -1,6 +1,6 @@
-.pagination-link[disabled], .pagination-next[disabled], .pagination-previous[disabled] {
+.pagination-link[disabled], .pagination-next[disabled], .pagination-previous[disabled]  {
     display: none;
-   }
+}
 
 .avatar{
     display: none;

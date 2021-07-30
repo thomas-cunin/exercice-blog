@@ -1,7 +1,8 @@
 <?php
 
-function redirect($url)
+function redirect(string $url): void
 {
-	header("Location:. $url . ");
+	header("Location: $url");
 	exit();
-};
+}
+
