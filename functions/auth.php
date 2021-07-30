@@ -1,11 +1,7 @@
 <?php
 
-/**
- * Indique si l'utilisateur est connecté
- *
- * @return bool
- */
-function isAuthenticated(): bool
+
+function isAuthenticated()
 {
 	// if (isset($_SESSION['auth'])) {
 	// 	return true;

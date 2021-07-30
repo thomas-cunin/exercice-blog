@@ -14,7 +14,8 @@ function findUser(string $username): ?array
 	$user = $query->fetch();
 
     if ($user === false) {
-        return null;
+			// Cas où l'utilisateur n'existe pas
+			return null;
     }
 
 	return $user;
