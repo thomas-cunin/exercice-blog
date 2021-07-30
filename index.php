@@ -42,7 +42,7 @@ $offset = $ordersPerPage * ($currentPage - 1);
 // classement des article du plus récent en haut vers le moins récent en bas
 
 $query = $db->prepare("
-SELECT p.id_post, p.title, LEFT(p.content, 200) AS content, DATE_FORMAT(p.creation_date, '%d %M %Y') AS date, DATE_FORMAT(p.creation_date, '%H h %i') AS heure , p.creation_date, u.username, u.avatar, c.name_categorie
+SELECT p.id_post, p.title, LEFT(p.content, 100) AS content, DATE_FORMAT(p.creation_date, '%d %M %Y') AS date, DATE_FORMAT(p.creation_date, '%H h %i') AS heure , p.creation_date, u.username, u.avatar, c.name_categorie
 FROM posts p 
 INNER JOIN users u ON u.id_user = p.id_user
 INNER JOIN categories c ON p.id_category = c.id_category
