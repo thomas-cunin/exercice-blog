@@ -1,5 +1,8 @@
 <?php
 
+
+
+
 $db = getConnection();
 
 	$query = $db->prepare("
