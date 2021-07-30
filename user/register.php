@@ -1,10 +1,15 @@
 <?php
 session_start();
-require '../functions/package.php';
+require 'utils.php'; // redirect($url) : return header('location : $url')
+require 'db_connection.php'; // getConnection() : return new PDO(...)
+require 'post.php'; // findPost($user_id) : return $post
+// deletePost($post_id) + updatePost($post_id, $post_data)
+require 'user.php'; // findUser($username) : return $user
+// deletePost($user_id) + updatePost($user_id, $user_data)
+require 'auth.php'; // isAuthenticated() : return isset($_SESSION['auth'])
 if (isAuthenticated()){
   redirect('../index.php');
 };
-var_dump($_SESSION['errors']);
 
 $db = getConnection();
 
@@ -12,6 +17,7 @@ $db = getConnection();
 // On enregistre l'utilisateur
 if (! empty($_POST)) {
 
+  var_dump($_SESSION['errors']); // For dev
 	// Tableau (stocké dans la session) contenant toutes les erreurs du formulaire
 	$_SESSION['errors'] = [];
 
