@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <section class="section columns is-flex is-flex-wrap-wrap is-justify-content-center">
     <?php foreach ($posts as $post) : ?>
     <div class="card column is-3 m-5">
@@ -11,51 +11,6 @@
             <div class="content">
                 <p><?= $post['content'] ?><a href="./post.php?id_post=<?= $post['id_post'] ?>">... lire la suite</a>
                 </p>
-            </div>
-            <div class="content">
-                <h5>Auteur : <?= $post['username'] ?></h5>
-                <p>Catégorie : <?= $post['name_categorie'] ?></p>
-                <br />
-                <time><?= $post['date'] ?> à <?= $post['heure'] ?></time>
-            </div>
-        </div>
-    </div>
-    <?php endforeach ?>
-</section>
-<section class="container section">
-    <div>
-        <nav class="pagination is-centered">
-            <ul class="pagination-list">
-                <li >
-                <a <?php if ($currentPage <= 1): ?> disabled<?php endif ?>  class="pagination-previous" href="./index.php?page=<?= $currentPage - 1 ?>">Previous</a>
-                </li>
-                
-                <?php for ($page = 1; $page <= $totalPages; $page++): ?>
-                <li class="">
-                    <a <?php if ($page === $currentPage): ?>
-                    active
-                    <?php endif ?> class="pagination-link" href="./index.php?page=<?= $page?>"><?= $page ?></a>
-                </li <?php if($currentPage >= $totalPages): ?> disabled <?php endif ?>>
-                <?php endfor ?>
-                <li>
-                <a <?php if($currentPage >= $totalPages): ?> disabled <?php endif ?> class="pagination-next"  href="./index.php?page=<?= $currentPage + 1 ?>">Next page</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</section>
-=======
-<section class="section columns is-flex is-flex-wrap-wrap is-justify-content-center">
-    <?php foreach ($posts as $post) : ?>
-    <div class="card column is-3 m-5">
-        <div class="card-content">
-            <div class="media">
-                <div class="media-content">
-                    <p class="title"><?= $post['title'] ?></p>
-                </div>
-            </div>
-            <div class="content">
-                <p><?= $post['content'] ?><a href="./post.php?id=<?= $post['id_post'] ?>">... lire la suite</a></p>
             </div>
             <div class="content">
                 <h5>Auteur : <?= $post['username'] ?></h5>
@@ -89,4 +44,3 @@
         </nav>
     </div>
 </section>
->>>>>>> 7955a96f82ec84472a25bda5e1f6bd60ce587812
