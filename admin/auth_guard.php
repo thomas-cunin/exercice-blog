@@ -4,7 +4,9 @@ require '../functions/auth.php'; // isAuthenticated() : return isset($_SESSION['
 $redirectionLink = '../index.php';
 if (!isAuthenticated()){
   header('location : ' . $redirectionLink);
-} elseif ($_SESSION['auth']['rank'] < $rankForAccess) {
+  exit();
+} elseif ($_SESSION['auth']['rank'] < $rankForAccess AND $_SESSION['auth']['rank'] !== $idForAccess) {
   header('location : ' . $redirectionLink);
+  exit();
 }
  ?>
