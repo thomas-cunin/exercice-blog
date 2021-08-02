@@ -1,0 +1,18 @@
+<button onclick="showModal()" class="button is-normal is-primary modal-button" data-target="modal" id="show-modal" aria-haspopup="true">Laisser un commentaire</button>
+<div id="modal" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Ajouter un commentaire</p>
+      <button onclick="hideModal()" class="delete" id="hide-modal"  aria-label="Fermer"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="content">
+        <textarea class="textarea" placeholder="Entrer votre commentaire"></textarea>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-success">Enregistrer le commentaire</button>
+    </footer>
+  </div>
+</div>
