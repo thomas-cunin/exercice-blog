@@ -6,13 +6,19 @@
       <p class="modal-card-title">Ajouter un commentaire</p>
       <button onclick="hideModal()" class="delete" id="hide-modal"  aria-label="Fermer"></button>
     </header>
-    <section class="modal-card-body">
+    <form method="post" action="post.php?id_post=<?= $_GET['id_post'] ?>" class="modal-card-body">
+
+      <!-- récupération de la valeur "username" dans $_SESSION -->
+      <input type="hidden" name="id_user" value="<?= $_SESSION['username'] ?>">
+
+      <!-- récupération de la valeur "id_post" dans $_GET -->
+      <input type="hidden" name="id_post" value="<?= $_GET['id_post'] ?>">
+      
+      <!-- commentaire -->
       <div class="content">
-        <textarea class="textarea" placeholder="Entrer votre commentaire"></textarea>
+        <textarea name="content" class="textarea" placeholder="Entrer votre commentaire"></textarea>
       </div>
-    </section>
-    <footer class="modal-card-foot">
-      <button class="button is-success">Enregistrer le commentaire</button>
-    </footer>
+        <button class="button is-success">Enregistrer le commentaire</button>
+    </form>
   </div>
 </div>
