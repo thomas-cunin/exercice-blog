@@ -43,7 +43,7 @@ if (!empty($_POST)) {
 		'email' => $user['email'],
 		'rank' => $user['rank']
 	];
-
+	unset($_SESSION['error']);
 	header('Location: index.php');
 	exit();
 }
