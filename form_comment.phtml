@@ -9,7 +9,7 @@
     <form method="post" action="post.php?id_post=<?= $_GET['id_post'] ?>" class="modal-card-body">
 
       <!-- récupération de la valeur "username" dans $_SESSION -->
-      <input type="hidden" name="id_user" value="<?= $_SESSION['username'] ?>">
+      <input type="hidden" name="id_user" value="<?= $user['id_user'] ?>">
 
       <!-- récupération de la valeur "id_post" dans $_GET -->
       <input type="hidden" name="id_post" value="<?= $_GET['id_post'] ?>">

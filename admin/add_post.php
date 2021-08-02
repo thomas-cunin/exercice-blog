@@ -15,7 +15,7 @@
   // On récupère tous les résultats de la requête dans une variable $customers
   $categories = $query->fetchAll();
 
-  var_dump($_SESSION['auth']);
+  // var_dump($_SESSION['auth']);
 
 
   if (isset($_POST) AND !empty($_POST['title']) AND !empty($_POST['content']) AND !empty($_POST['id_categorie']) ) {
