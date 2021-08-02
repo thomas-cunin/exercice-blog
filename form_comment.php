@@ -35,7 +35,7 @@ if (empty($_POST)) {
 else{
     // Modification en base de données : récupérer toutes les données du formulaire
 	$query = $db->prepare("
-    UPDATE comments SET content = ?, id_post = ?, id_user = ?
+    INSERT INTO comments SET content = ?, id_post = ?, id_user = ?
 ");
 
 $query->execute([
