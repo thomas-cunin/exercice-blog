@@ -29,6 +29,7 @@
                 <li >
                 <a <?php if ($currentPage <= 1): ?> disabled<?php endif ?>  class="pagination-previous" href="./index.php?page=<?= $currentPage - 1 ?>">Previous</a>
                 </li>
+<<<<<<< HEAD
                 
                 <?php for ($page = 1; $page <= $totalPages; $page++): ?>
                 <li class="">
@@ -45,3 +46,20 @@
     </div>
 </section>
 
+=======
+
+                <?php for ($page = 1; $page <= $totalPages; $page++): ?>
+                <li class="">
+                    <a <?php if ($page === $currentPage): ?>
+                    active
+                    <?php endif ?> class="pagination-link" href="./index.php?page=<?= $page?>"><?= $page ?></a>
+                </li <?php if($currentPage >= $totalPages): ?> disabled <?php endif ?>>
+                <?php endfor ?>
+                <li>
+                <a <?php if($currentPage >= $totalPages): ?> disabled <?php endif ?> class="pagination-next"  href="./index.php?page=<?= $currentPage + 1 ?>">Next page</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</section>
+>>>>>>> 39f445196e4660b5e2eeb1a81d3bb01b5b48bd37

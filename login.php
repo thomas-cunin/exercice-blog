@@ -1,14 +1,15 @@
 <?php
 session_start();
-require 'utils.php'; // redirect($url) : return header('location : $url')
-require 'db_connection.php'; // getConnection() : return new PDO(...)
-require 'post.php'; // findPost($user_id) : return $post
+require './functions/utils.php'; // redirect($url) : return header('location : $url')
+require './functions/db_connection.php'; // getConnection() : return new PDO(...)
+require './functions/post.php'; // findPost($user_id) : return $post
 // deletePost($post_id) + updatePost($post_id, $post_data)
-require 'user.php'; // findUser($username) : return $user
+require './functions/user.php'; // findUser($username) : return $user
 // deletePost($user_id) + updatePost($user_id, $user_data)
-require 'auth.php'; // isAuthenticated() : return isset($_SESSION['auth'])
+require './functions/auth.php'; // isAuthenticated() : return isset($_SESSION['auth'])
 if (isAuthenticated()){
-  redirect('../index.php');
+  header('Location: ./index.php');
+
 };
 if (isset($_SESSION['error'])){
 	var_dump($_SESSION['error']);
@@ -41,11 +42,11 @@ if (!empty($_POST)) {
 		'email' => $user['email']
 	];
 
-	header('Location: ../index.php');
+	header('Location: index.php');
 	exit();
 }
 $template = 'login';
 
 $title = "Connexion";
 
-require '../template.phtml';
+require 'template.phtml';

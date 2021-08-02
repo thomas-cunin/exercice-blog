@@ -1,9 +1,7 @@
-<<<<<<< HEAD
   <?php
-session_start();
+// --------- Début AUTH GUARD ------------ //
+  $idForAccess = -1; // Sert dans le cas où un utilisateur veut modifier son propre post
+  $rankForAccess = 2; // Le niveau 1 est le niveau de l'utilsiateur lambda
+  require 'auth_guard.php';
+// --------- Fin AUTH GUARD ------------ //
  ?>
-=======
-<?php
-session_start();
- ?>
->>>>>>> 7955a96f82ec84472a25bda5e1f6bd60ce587812
