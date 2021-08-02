@@ -1,0 +1,17 @@
+<div class="buttons">
+<?php if (!isAuthenticated()) : ?>
+      <a href="../register.php" class="button is-primary">
+          <strong>S'inscrire</strong>
+      </a>
+      <a href="../login.php" class="button is-light">
+        Se connecter
+      </a>
+<?php else : ?>
+  <a href="../logout.php" class="button is-warning">
+    Retour au blog
+  </a>
+  <a href="../logout.php" class="button is-danger">
+    Se déconnecter
+  </a>
+<?php endif ?>
+  </div>

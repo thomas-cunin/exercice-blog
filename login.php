@@ -20,6 +20,7 @@ if (!empty($_POST)) {
 
 	// On récupère l'utilisateur correspondant au nom qui a été saisi dans le formulaire
 	$user = findUser($_POST['username']);
+	var_dump($user);
   if (is_null($user)) {
     // Cas où l'utilisateur n'existe pas
     $_SESSION['error'] = "user does not exist";
@@ -37,9 +38,10 @@ if (!empty($_POST)) {
 	// Nom d'utilisateur et mot de passe OK !
 	// => Connexion de l'utilisateur : on enregistre les informations de l'utilisateur dans la session
 	$_SESSION['auth'] = [
-		'id' => $user['id'],
+		'id' => $user['id_user'],
 		'username' => $user['username'],
-		'email' => $user['email']
+		'email' => $user['email'],
+		'rank' => $user['rank']
 	];
 
 	header('Location: index.php');

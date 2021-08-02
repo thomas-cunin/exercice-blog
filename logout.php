@@ -2,6 +2,6 @@
 session_start();
 unset($_SESSION['auth']);
 
-header('location: ../login.php');
+header('location: ./login.php');
 
  ?>

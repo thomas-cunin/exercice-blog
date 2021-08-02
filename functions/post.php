@@ -9,7 +9,7 @@
  * @return array|bool
  */
 
-function findPost(string $id_post): ?array
+function findPost(string $id_post)
 {
 	$db = getConnection();
 

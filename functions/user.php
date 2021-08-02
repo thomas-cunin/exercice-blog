@@ -14,7 +14,11 @@ function findUser(string $username): ?array
 	$db = getConnection();
 
 	$query = $db->prepare("
-		SELECT id_user, username, email, password, avatar FROM users WHERE username = ?
+		SELECT u.id_user, u.username, u.email, u.password, u.avatar, r.rank 
+		FROM users AS u 
+		INNER JOIN ranking AS r 
+		ON u.id_user = r.id_user
+		WHERE username = ?
 	");
 
 	$query->execute([

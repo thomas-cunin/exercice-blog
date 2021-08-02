@@ -12,7 +12,7 @@
         <header>
             <nav class="navbar" role="navigation" aria-label="main navigation">
                 <div class="navbar-brand">
-                    <a class="navbar-item" href="index.php">Mon blog</a>
+                    <a class="navbar-item" ><strong>Administration</strong></a>
 
                     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                         <span aria-hidden="true"></span>
@@ -23,12 +23,14 @@
 
                 <div id="navbarBasicExample" class="navbar-menu">
                     <div class="navbar-start">
-                        <a class="navbar-item"> Home </a>
+                        <a href="" class="navbar-item"> Ajouter un article </a>
+                        <a href="" class="navbar-item"> Liste des articles</a>
+                        <a href="" class="navbar-item"> Liste des utilisateurs</a>
                     </div>
 
                     <div class="navbar-end">
                         <div class="navbar-item">
-                            <?php require 'auth_buttons.phtml'; ?>
+                            <?php require 'auth_buttons.phtml' ?>
                         </div>
                     </div>
                 </div>
@@ -37,11 +39,10 @@
         <main class="container">
             <?php require $template . '.phtml' ?>
         </main>
-        <footer class="">
-            <div class="content has-text-centered py-5">
+        <footer class="footer">
+            <div class="content has-text-centered">
                 <p>&copy; Blog</p>
             </div>
         </footer>
-        <script src="./js/modal.js"></script>
     </body>
 </html>

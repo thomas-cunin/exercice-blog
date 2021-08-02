@@ -1,14 +1,19 @@
 <div class="buttons">
 <?php if (!isAuthenticated()) : ?>
-      <a href="register.php" class="button is-primary">
+      <a href="./register.php" class="button is-primary">
           <strong>S'inscrire</strong>
       </a>
-      <a href="login.php" class="button is-light">
+      <a href="./login.php" class="button is-light">
         Se connecter
       </a>
 <?php else : ?>
-  <a href="logout.php" class="button is-danger">
+  <?php if ($_SESSION['auth']['rank'] > 1) :?>
+    <a href="./admin/add_post.php" class="button is-link">
+      <strong>Administration</strong>
+  </a>
+  <?php endif; ?>
+  <a href="./logout.php" class="button is-danger">
     Se déconnecter
   </a>
-<?php endif ?>
+<?php  var_dump($_SESSION);endif ?>
   </div>
